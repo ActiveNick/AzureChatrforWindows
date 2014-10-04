@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="AzureChatr.MainPage"
+    IsTabStop="false"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AzureChatr"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <ProgressRing x:Name="prgBusy" />
+        <!--IMPORTANT NOTE: The MaxWidth set to 500 is a temporary measure for
+            prototyping purposes to prevent the app from using the full screen
+            width on Windows. It has no effect on Windows Phone.
+            This should never be used in apps published to the store.
+            My goal is to integrate a Hub control in the next version to offer
+            a better experience on both Windows and Windows Phone. -->
+        <Grid Margin="10" MaxWidth="500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="0,0,0,0">
+                <StackPanel>
+                    <TextBlock Foreground="#0094ff" FontFamily="Segoe UI Light" Margin="0,0,0,6">POWERED BY MICROSOFT AZURE</TextBlock>
+                    <TextBlock Foreground="Gray" FontFamily="Segoe UI Light" FontSize="45" >AzureChatr beta</TextBlock>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <TextBlock Name="StatusMsg" Margin="5" FontSize="14">Initializing chat channel, please wait...</TextBlock>
+                    <TextBlock Name="TextUserName" Text="No user is currently logged in." Grid.Column="0" FontSize="14" MinWidth="150" Margin="5"/>
+                </StackPanel>
+                <ListView Grid.Row="1" Name="ListItems" Margin="5" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" IsTabStop="True" TabIndex="0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Left">
+                                <!-- The fixed font size should be avoided, this is a temporary approach.
+                                     I will add configurable font sizes in the next version. -->
+                                <TextBlock Name="ChatUser" Text="{Binding UserName}" Foreground="#0094ff" Margin="0,5,0,0" FontSize="14" TextWrapping="Wrap"/>
+                                <TextBlock Name="ChatLine" Text="{Binding Text}" Foreground="Black" Margin="0,0,0,5" FontSize="14" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Name="TextInput" IsEnabled="False" TextWrapping="Wrap" PlaceholderText="you must be logged in to chat" MinWidth="150" Margin="5" KeyUp="ButtonSend_KeyUp"/>
+                    <AppBarButton Grid.Column="1" x:Name="btnWinSend" IsEnabled="False" Visibility="Collapsed" Label="send" Icon="Send" Click="ButtonSend_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="send" Icon="Send" Click="ButtonSend_Click"/>
+            <AppBarButton Label="refresh" Icon="Refresh" Click="ButtonRefresh_Click"/>
+            <AppBarButton Label="feedback" Icon="Comment" Click="ButtonFeedback_Click"/>
+
+            <CommandBar.SecondaryCommands>
+                <!--<AppBarButton Label="about this app" Icon="Important" Click="ButtonAbout_Click"/>-->
+                
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

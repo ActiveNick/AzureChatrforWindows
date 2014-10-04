@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>9fed37f6-c2ab-4775-aa6c-6d461e5a4755</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>AzureChatr_for_Windows_Public</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ChatItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\QuickStartTask.xaml.cs">
+      <DependentUpon>QuickStartTask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ConfigSecrets.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ListViewExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\VisualTreeHelperExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrStoreTile120.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrStoreTile300.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrStoreTile358.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrStoreTile358x173.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrStoreTile360.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile106.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile120.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile170.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile30.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile310.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile310x150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile360.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile44.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile57.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile71.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTile744x360.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplash.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplash1280.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplashWin1116x540.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplashWin1116x540.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplashWin620x300.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplashWin620x300.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplashWin868x420.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplashWin868x420.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Cloud-Rain.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Cloud.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Conference-Call.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\SmallLogo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\WideLogo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplash.pdn" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\AzureChatrTileSplashWin.pdn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Common\QuickStartTask.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Common\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>

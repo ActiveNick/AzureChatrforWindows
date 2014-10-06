@@ -85,4 +85,4 @@ EDIT THE INSERT SCRIPT OF YOUR MOBILE SERVICE TABLE
             });
         }
         
-Make sure to insert your notification hub name and full access connection string in the placeholders above when calling createNotificationHubService.
+Make sure to insert your notification hub name and full access connection string in the placeholders above when calling createNotificationHubService. You only need to do this ONCE in Azure since the same INSERT script is used as the common backend for Windows, iOS and Android.
